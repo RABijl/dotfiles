@@ -133,9 +133,22 @@ mkcd () {
 alias ls='ls --color=auto'
 
 # fzf
-#export FZF_COMPLETION_TRIGGER=
-source /usr/share/doc/fzf/examples/completion.bash
-source /usr/share/doc/fzf/examples/key-bindings.bash
+if [ -f /usr/share/fzf/key-bindings.bash ]; then
+	source /usr/share/fzf/key-bindings.bash
+elif [ -f /usr/share/doc/fzf/examples/key-bindings.bash ]; then
+	source /usr/share/doc/fzf/examples/key-bindings.bash
+else 
+	echo "could not find fzf key bindings"
+fi
+
+if [ -f /usr/share/fzf/completion.bash ]; then
+	source /usr/share/fzf/completion.bash
+elif [ -f /usr/share/doc/fzf/examples/completion.bash ]; then
+	source /usr/share/doc/fzf/examples/completion.bash
+else
+	echo "could not find fzf completion"
+fi
+
 export FZF_COMPLETION_OPTS='--border --info inline --layout reverse'
 
 #lazygit
@@ -146,18 +159,10 @@ alias lg="lazygit"
 # default git editor 
 export EDITOR="micro"
 
-# ssh
-# if [ -z "$SSH_AUTH_SOCK" ] ; then
-	# eval "$(ssh-agent -s)" > /dev/null
-	# ssh-add ~/.ssh/gitlab-tuni  > /dev/null 2> /dev/null
-# fi
+# the fuck cli
+eval "$(thefuck --alias)"
 
-# vivado business
-export XILINXD_LICENSE_FILE=2100@licf01.intra.tut.fi
-#alias vivado="/tools/Xilinx/Vivado/2022.1/bin/vivado"
-#alias docnav="/tools/Xilinx/DocNav/docnav"
-#alias vitis="/tools/Xilinx/Vitis_HLS/2022.1/bin/vitis_hls"
-export PATH="$PATH:/tools/Xilinx/Vivado/2022.1/bin/unwrapped/lnx64.o"
+if [ -f ~/.xilinx_config ]; then
+	source ~/.xilinx_config
+fi
 
-# temp older vivaod version
-alias vivado1="/tools/Xilinx/Vivado/2019.1/bin/unwrapped/lnx64.o/vivado"

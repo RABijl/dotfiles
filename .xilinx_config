@@ -1,0 +1,6 @@
+# file with xilinx related bash options
+
+#alias vivado="/tools/Xilinx/Vivado/2022.1/bin/vivado"
+#alias docnav="/tools/Xilinx/DocNav/docnav"
+#alias vitis="/tools/Xilinx/Vitis_HLS/2022.1/bin/vitis_hls"
+export PATH="$PATH:/tools/Xilinx/Vivado/2022.1/bin/unwrapped/lnx64.o"
