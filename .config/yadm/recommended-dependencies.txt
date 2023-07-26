@@ -2,3 +2,4 @@ fzf
 starship
 pkgfile
 thefuck
+guake
