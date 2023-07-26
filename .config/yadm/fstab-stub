@@ -1,0 +1,16 @@
+# These entries are extra for my specific pc.
+# Intended to be added to fstab when distro-hopping.
+
+
+# /dev/nvme1n1p2 LABEL=NVME-2
+UUID=58DAB2E6DAB2BF94   /mnt/large_storage_ntfs ntfs            rw,nosuid,nodev,user_id=0,group_id=0,allow_other,blksize=4096       0 0
+
+# /dev/nvme1n1p3
+UUID=02315afd-6767-4a63-905c-94849eeb421a       /mnt/large_storage_ext4 ext4            rw,relatime     0 2
+
+# bind windows dirs to linux home
+/mnt/large_storage_ntfs/global_shared/Documents         /home/rabijl/Documents          none            defaults,bind       0 0
+/mnt/large_storage_ntfs/global_shared/Downloads         /home/rabijl/Downloads          none            defaults,bind       0 0
+/mnt/large_storage_ntfs/global_shared/Music                     /home/rabijl/Music                      none       defaults,bind    0 0
+/mnt/large_storage_ntfs/global_shared/Pictures          /home/rabijl/Pictures           none            defaults,bind       0 0
+/mnt/large_storage_ntfs/global_shared/Videos            /home/rabijl/Videos                     none            defaults,bind       0 0
