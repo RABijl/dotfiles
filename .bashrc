@@ -117,7 +117,10 @@ if ! shopt -oq posix; then
 fi
 
 # added by me
-alias bat=batcat
+# alias bat if it is called batcat 
+if [ -f /urs/bin/batcat ]; then
+	alias bat=batcat
+fi
 
 #kitty 
 alias icat="kitty +kitten icat"
