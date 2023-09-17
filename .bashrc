@@ -154,8 +154,8 @@ fi
 
 export FZF_COMPLETION_OPTS='--border --info inline --layout reverse'
 
-#lazygit
-export PATH="$PATH:~/go/bin"
+#go and rust programs 
+export PATH="$PATH:/home/rabijl/go/bin:/home/rabijl/.cargo/bin"
 alias lg="lazygit"
 
 
