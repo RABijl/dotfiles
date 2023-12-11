@@ -1,0 +1,7 @@
++ Documents/**
++ Dungeons\ and\ Dragons/**
++ Music/**
++ Pictures/**
+- Pictures/temp/
++ Papers/**
+- **
