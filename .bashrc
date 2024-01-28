@@ -162,5 +162,16 @@ export XILINXD_LICENSE_FILE=2100@licf01.intra.tut.fi
 #alias vitis="/tools/Xilinx/Vitis_HLS/2022.1/bin/vitis_hls"
 export PATH="$PATH:/tools/Xilinx/Vivado/2022.1/bin/unwrapped/lnx64.o"
 
-# temp older vivaod version
-alias vivado1="/tools/Xilinx/Vivado/2019.1/bin/unwrapped/lnx64.o/vivado"
+# add locally installed programs to search path
+export PATH="$PATH:/home/rabijl/.local/lib/"
+
+# https://wiki.archlinux.org/title/Tmux#Start_tmux_on_every_shell_login
+if [ -z "$TMUX" ]; then
+	exec tmux new-session -A -s ${USER} >/dev/null 2>&1
+fi
+
+# a little helper alias where I can collect useful stuff
+alias ht='bat --color=always --style=numbers --line-range=:500 --paging=always terminal_shortcuts.md'
+
+# fzf preview
+alias fp='fzf --preview "bat --color=always --style=numbers --line-range=:500 {}"'
