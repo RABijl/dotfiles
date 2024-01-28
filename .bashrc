@@ -169,3 +169,16 @@ if [ -f ~/.xilinx_config ]; then
 	source ~/.xilinx_config
 fi
 
+# add locally installed programs to search path
+export PATH="$PATH:/home/rabijl/.local/lib/"
+
+# https://wiki.archlinux.org/title/Tmux#Start_tmux_on_every_shell_login
+if [ -z "$TMUX" ]; then
+	exec tmux new-session -A -s ${USER} >/dev/null 2>&1
+fi
+
+# a little helper alias where I can collect useful stuff
+alias ht='bat --color=always --style=numbers --line-range=:500 --paging=always terminal_shortcuts.md'
+
+# fzf preview
+alias fp='fzf --preview "bat --color=always --style=numbers --line-range=:500 {}"'
