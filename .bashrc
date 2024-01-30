@@ -118,8 +118,10 @@ fi
 
 # added by me
 # alias bat if it is called batcat 
-if [ -f /urs/bin/batcat ]; then
+BATCMD="bat"
+if [ -f /usr/bin/batcat ]; then
 	alias bat=batcat
+	BATCMD="batcat"
 fi
 
 #kitty 
@@ -171,7 +173,8 @@ if [ -z "$TMUX" ]; then
 fi
 
 # a little helper alias where I can collect useful stuff
-alias ht='bat --color=always --style=numbers --line-range=:500 --paging=always terminal_shortcuts.md'
+alias ht="${BATCMD} --color=always --style=numbers --line-range=:500 --paging=always ~/terminal_shortcuts.md"
 
 # fzf preview
-alias fp='fzf --preview "bat --color=always --style=numbers --line-range=:500 {}"'
+alias fp='fzf --preview "${BATCMD} --color=always --style=numbers --line-range=:500 {}"'
+
