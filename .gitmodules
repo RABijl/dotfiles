@@ -1,3 +1,6 @@
 [submodule "/home/rabijl/.tmux/plugins/tpm"]
 	path = /home/rabijl/.tmux/plugins/tpm
 	url = https://github.com/tmux-plugins/tpm
+[submodule "/home/rabijl/.config/alacritty/themes"]
+	path = /home/rabijl/.config/alacritty/themes
+	url = https://github.com/alacritty/alacritty-theme
