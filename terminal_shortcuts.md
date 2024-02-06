@@ -3,6 +3,10 @@
 
 prefix = ctrl + space
 
+tmux list_keys : show all the key bindings
+
+mouse select : hold shift while selecting text
+
 ### session management
 
 prefix + w : preview windows of sessions (press enter to go there)
